@@ -1,0 +1,298 @@
+/* 公共变量 */
+/* 样式重置 */
+* {
+  margin: 0px;
+  padding: 0px;
+  /*在移动端设置盒模型border-box 为了防止元素加边框或者padding出现水平滚动条*/
+  box-sizing: border-box;
+  /* 去除移动端按住元素的时候会出现高亮背景色 */
+  -webkit-tap-highlight-color: transparent;
+  /* 去掉所有移动端内边框 */
+  outline: none;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+input {
+  border: 0;
+}
+img {
+  /* 解决图片底部3px的间隙 为了让图片的对齐方式和文本一致*/
+  vertical-align: middle;
+}
+i {
+  font-style: normal;
+}
+/* 公共样式 */
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* 公共的图标样式 */
+/* 属性选择器 匹配类名以icon-开头 或者 中间包含了空格icon-的元素 */
+[class^="icon-"],
+[class*=" icon-"] {
+  /* 公共的精灵图 */
+  background-image: url(../images/sprites.png);
+  /* 设置背景图的大小 图片要缩小一半来写 背景图就设置背景图大小 */
+  background-size: 200px 200px;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+.border-left {
+  border-left: 1px solid #ccc;
+}
+.border-right {
+  border-right: 1px solid #ccc;
+}
+.border-top {
+  border-top: 1px solid #ccc;
+}
+.border-bottom {
+  border-bottom: 1px solid #ccc;
+}
+body {
+  max-width: 750px;
+  margin: 0 auto;
+}
+#header {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  width: 100%;
+  max-width: 750px;
+  z-index: 999;
+}
+#header .icon-logo {
+  display: block;
+  width: 80px;
+  height: 40px;
+  background-position: 0 -108px;
+  padding: 5px 10px;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+#header > .form {
+  flex: 1;
+  margin-top: 4px;
+  position: relative;
+}
+#header > .form > .icon-search {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-position: -59px -108px;
+  left: 6px;
+  top: 4px;
+}
+#header > .form input {
+  width: 100%;
+  border-radius: 15px;
+  height: 30px;
+  padding-left: 30px;
+}
+#header .login {
+  display: block;
+  padding: 5px 10px;
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+}
+#slide {
+  /* 修改小圆点样式 */
+}
+#slide img {
+  width: 100%;
+}
+#slide .swiper-pagination-bullet {
+  background-color: transparent;
+  opacity: 1;
+  border: 1px solid #fff;
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+}
+#slide .swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+#nav {
+  padding: 10px;
+}
+#nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#nav ul li {
+  width: 25%;
+}
+#nav ul li a {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+#nav ul li a img {
+  width: 40px;
+  height: 40px;
+}
+#nav ul li a p {
+  line-height: 30px;
+  font-size: 14px;
+}
+#main {
+  margin-bottom: 60px;
+  background: #eee;
+  padding: 10px;
+}
+#main #seckill {
+  border: 1px solid #ccc;
+}
+#main #seckill .seckill-title {
+  background: #fff;
+  height: 30px;
+  line-height: 30px;
+}
+#main #seckill .seckill-title .clock {
+  width: 20px;
+  height: 25px;
+  float: left;
+  margin-left: 5px;
+}
+#main #seckill .seckill-title .seckill-name {
+  float: left;
+  font-size: 14px;
+  color: #e93b3d;
+  margin-left: 5px;
+}
+#main #seckill .seckill-title .seckill-time {
+  float: left;
+  margin-left: 5px;
+}
+#main #seckill .seckill-title .seckill-time > span {
+  background-color: #000;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  line-height: 15px;
+  text-align: center;
+}
+#main #seckill .seckill-title .seckill-time > span:nth-child(3n) {
+  background: #fff;
+  color: #000;
+}
+#main #seckill .seckill-title .more {
+  float: right;
+  margin-right: 5px;
+}
+#main #seckill .seckill-content ul {
+  display: flex;
+  background: #fff;
+}
+#main #seckill .seckill-content ul li {
+  flex: 1;
+}
+#main #seckill .seckill-content ul li:nth-child(n+2) {
+  border-left: 1px solid #ccc;
+}
+#main #seckill .seckill-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+}
+#main #seckill .seckill-content ul li a img {
+  width: 110px;
+  height: 110px;
+}
+#main #seckill .seckill-content ul li a p {
+  color: #e93b3d;
+}
+#main #seckill .seckill-content ul li a del {
+  color: #ccc;
+}
+#main .jd-supermarket {
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  background: #fff;
+}
+#main .jd-supermarket .supermarket-title {
+  border-bottom: 1px solid #ccc;
+}
+#main .jd-supermarket .supermarket-title h4 {
+  font-weight: normal;
+  line-height: 30px;
+  padding-left: 30px;
+  position: relative;
+}
+#main .jd-supermarket .supermarket-title h4::before {
+  content: "";
+  width: 4px;
+  height: 15px;
+  background: #e93b3d;
+  position: absolute;
+  left: 20px;
+  top: 7px;
+}
+#main .jd-supermarket .supermarket-content {
+  display: flex;
+}
+#main .jd-supermarket .supermarket-content .left {
+  flex: 1;
+  border-right: 1px solid #ccc;
+}
+#main .jd-supermarket .supermarket-content .left a {
+  width: 100%;
+  display: block;
+}
+#main .jd-supermarket .supermarket-content .left a img {
+  width: 100%;
+}
+#main .jd-supermarket .supermarket-content .right {
+  flex: 1;
+}
+#main .jd-supermarket .supermarket-content .right a {
+  width: 100%;
+  display: block;
+}
+#main .jd-supermarket .supermarket-content .right a:nth-of-type(1) {
+  border-bottom: 1px solid #ccc;
+}
+#main .jd-supermarket .supermarket-content .right a img {
+  width: 100%;
+}
+#footer {
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  bottom: 0px;
+  z-index: 999;
+  max-width: 750px;
+}
+#footer ul {
+  display: flex;
+}
+#footer ul li {
+  width: 100%;
+  text-align: center;
+}
+#footer ul li a {
+  width: 100%;
+  display: block;
+}
+#footer ul li a img {
+  width: 65px;
+  height: 50px;
+}

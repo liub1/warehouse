@@ -1,0 +1,244 @@
+@import "base.less";
+
+body {
+    max-width: 750px;
+    margin: 0 auto;
+}
+// 头部区域
+#header {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    width: 100%;
+    max-width: 750px;
+    z-index: 999;
+    .icon-logo{
+        display: block;
+        width: 80px;
+        height: 40px;
+        background-position:0 -108px;
+         padding: 5px 10px;
+         background-origin: content-box;
+         background-clip: content-box; 
+    }
+    > .form{
+        flex: 1;
+        margin-top: 4px;
+        position: relative;
+        > .icon-search{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-position: -59px -108px;
+            left: 6px;
+            top: 4px;
+        }
+        input{
+            width: 100%;
+            border-radius: 15px;
+            height: 30px;
+            padding-left: 30px;
+        }
+    }
+    .login{
+        display: block;
+        padding: 5px 10px;
+        width: 60px;
+        height: 40px;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+    }
+}
+//轮播图区域
+#slide {
+    img {
+        width: 100%;
+    }
+    /* 修改小圆点样式 */
+    .swiper-pagination-bullet {
+        background-color: transparent;
+        opacity: 1;
+        border: 1px solid #fff;
+        width: 8px;
+        height: 8px;
+        box-sizing: border-box;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #fff;
+    }
+}
+
+//导航栏区域
+#nav {
+    padding: 10px;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        li{
+           width: 25%; 
+           a {
+               display: block;
+               text-align: center;
+               width: 100%;
+               img {
+                   width: 40px;
+                   height: 40px;
+               }
+               p{
+                   line-height: 30px;
+                   font-size: 14px;
+               }
+           }
+        }
+    }
+}
+//秒杀区域
+#main {
+    margin-bottom: 60px;
+    background: #eee;
+    padding: 10px;
+    #seckill {
+        border: 1px solid @border-color;
+        .seckill-title {
+            background: #fff;
+            height: 30px;
+            line-height: 30px;
+            .clock {
+                width: 20px;
+                height: 25px;
+                float: left;
+                margin-left: 5px;
+            }
+            .seckill-name {
+                float: left;
+                font-size: 14px;
+                color: @main-color;
+                margin-left: 5px;
+            }
+            .seckill-time {
+                float: left;
+                margin-left: 5px;
+                > span {
+                    background-color: #000;
+                    color: #fff;
+                    width: 15px;
+                    height: 15px;
+                    display: inline-block;
+                    line-height: 15px;
+                    text-align: center;
+                    &:nth-child(3n){
+                        background: #fff;
+                        color: #000;
+                    }
+                }
+            }
+            .more {
+                float: right;
+                margin-right: 5px;
+            }
+        }
+        .seckill-content {
+            ul {
+                display: flex;
+                background: #fff;
+                li {
+                    flex: 1;
+                    &:nth-child(n+2){
+                        border-left: 1px solid @border-color;
+                    }
+                   a {
+                       display: block;
+                       width: 100%;
+                       font-size: 12px;
+                       text-align: center;
+                       img {
+                           width: 110px;
+                           height: 110px;
+                       }
+                       p{
+                           color: @main-color;
+                       }
+                       del {
+                            color: @border-color;
+                       }
+                   }
+                }
+            }
+        }
+    }
+    .jd-supermarket{
+        border: 1px solid @border-color;
+        margin-top: 10px;
+        background: #fff;
+        .supermarket-title{
+            border-bottom: 1px solid @border-color;
+            h4 {
+                font-weight: normal;
+                line-height: 30px;
+                padding-left: 30px;
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 4px;
+                    height: 15px;
+                    background: @main-color;
+                    position: absolute;
+                    left: 20px;
+                    top: 7px;
+                }
+            }
+        }
+        .supermarket-content{
+            display: flex;
+            .left{
+                flex: 1;
+                border-right: 1px solid @border-color;
+                a {
+                    width: 100%;
+                    display: block;
+                    img {
+                       width: 100%;
+                    }
+                }
+            }
+            .right{
+                flex: 1;
+                a {
+                    width: 100%;
+                    display: block;
+                    &:nth-of-type(1){
+                        border-bottom: 1px solid @border-color;
+                    }
+                    img {
+                       width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+//尾部区域
+#footer {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    bottom: 0px;
+    z-index: 999;
+    max-width: 750px;
+    ul{
+        display: flex;
+        li {
+            width: 100%;
+            text-align: center;
+            a {
+                width: 100%;
+                display: block;
+                img {
+                    width: 65px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
